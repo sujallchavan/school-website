@@ -1,0 +1,117 @@
+/* Base styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .navbar {
+    background-color: #FAF9F6; /* Background color of navbar */
+    color: #252422; /* Text color */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .navbar-brand span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #252422; /* Apply the text color */
+  }
+  
+  .navbar-links ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .navbar-links a {
+    text-decoration: none;
+    color: #252422; /* Text color for links */
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: #ffd700; /* Gold hover color */
+  }
+  
+  /* Mobile responsiveness */
+  .navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .toggle-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #252422; /* Hamburger bar color */
+    margin: 3px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .navbar-links ul {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 60px);
+      background-color: #004aad;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      transition: all 0.3s ease;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+  
+    .navbar-links.active ul {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    .navbar-toggle {
+      display: flex;
+    }
+  
+    .navbar-links ul li {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .navbar-links a {
+      font-size: 1.2rem;
+      padding: 10px;
+      width: 100%;
+      display: block;
+      color: #252422; /* Text color on mobile */
+    }
+  }
+  
